@@ -1,0 +1,164 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  font-size: 15;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Setting margin and pedding to zero for all elements */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Setting font-weight and color */
+h1 {
+  color: var(--very-dark-blue);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: var(--very-dark-blue);
+  font-weight: 200;
+  font-size: 1.5rem;
+}
+
+h3 {
+  color: var(--very-dark-blue);
+  font-weight: 600;
+}
+
+p {
+  color: var(--grayish-blue);
+  font-weight: 200;
+  font-size: 0.95rem;
+}
+
+.card-paragraph {
+  font-size: 0.8rem;
+}
+
+.top-paragraph {
+  margin-top: 20px;
+}
+
+/* Positioning */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 75px 0;
+  width: 300px;
+}
+
+.top-text {
+  text-align: center;
+  margin-bottom: 20%;
+}
+
+/* Styling the cards */
+.card {
+  border-radius: 5px;
+  box-shadow: 0px 12px 15px 3px rgba(163, 165, 174, 0.25);
+  height: 170px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-top: 5px solid;
+  width: 260px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  width: 60px;
+  position: relative;
+  left: 200px;
+  top: 42px;
+}
+
+/* Setting border-color for each card */
+.card-supervisor {
+  border-color: var(--cyan);
+}
+
+.card-team-builder {
+  border-color: var(--red);
+}
+
+.card-karma {
+  border-color: var(--orange);
+}
+
+.card-calculator {
+  border-color: var(--blue);
+}
+
+@media only screen and (min-width: 950px) {
+  body {
+    height: 100vh;
+  }
+  .main-container {
+    width: 1080px;
+    display: inline-block;
+    margin: 0;
+  }
+
+  .top-text {
+    margin: 0 0 50px 0;
+    text-align: center;
+  }
+
+  .top-paragraph {
+    width: 500px;
+    margin: 20px auto;
+  }
+  /* Card position to grid */
+  .cards-container {
+    display: grid;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". card-team-builder ."
+      "card-supervisor card-team-builder card-calculator"
+      "card-supervisor card-karma card-calculator"
+      ". card-karma .";
+  }
+
+  .card {
+    margin: 0;
+  }
+
+  .card-supervisor {
+    grid-area: card-supervisor;
+    place-self: center right;
+  }
+
+  .card-team-builder {
+    grid-area: card-team-builder;
+    place-self: center;
+    margin-bottom: 20px;
+  }
+
+  .card-karma {
+    grid-area: card-karma;
+    place-self: center;
+  }
+
+  .card-calculator {
+    grid-area: card-calculator;
+    place-self: center left;
+  }
+}
